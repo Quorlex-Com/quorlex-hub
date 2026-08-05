@@ -1,6 +1,0 @@
-{
-  "name": "Quorlex Hub",
-  "description": "Digital asset, software, Minecraft mod & plugin distribution platform with real-time download tracking, community discord, admin controls, and custom dark mode.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
