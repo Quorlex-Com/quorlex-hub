@@ -1,0 +1,77 @@
+{
+  "entities": {
+    "HubItem": {
+      "title": "HubItem",
+      "description": "An asset, software, Minecraft mod, plugin, or app published on Quorlex Hub",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "enum": ["mods", "plugins", "software", "apps", "assets"] },
+        "tagline": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 5000 },
+        "version": { "type": "string", "maxLength": 20 },
+        "targetVersion": { "type": "string", "maxLength": 50 },
+        "fileSize": { "type": "string", "maxLength": 20 },
+        "downloadUrl": { "type": "string", "maxLength": 500 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "bannerUrl": { "type": "string", "maxLength": 500 },
+        "tags": { "type": "array" },
+        "downloadsCount": { "type": "number" },
+        "rating": { "type": "number" },
+        "ratingsCount": { "type": "number" },
+        "isFeatured": { "type": "boolean" },
+        "isPinned": { "type": "boolean" },
+        "checksum": { "type": "string", "maxLength": 100 },
+        "changelog": { "type": "string", "maxLength": 2000 },
+        "installationGuide": { "type": "string", "maxLength": 3000 },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "authorUid": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["title", "category", "version", "downloadUrl"]
+    },
+    "Comment": {
+      "title": "Comment",
+      "description": "User review or comment on a Hub item",
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string", "maxLength": 128 },
+        "authorName": { "type": "string", "maxLength": 50 },
+        "authorUid": { "type": "string", "maxLength": 128 },
+        "authorAvatar": { "type": "string", "maxLength": 500 },
+        "content": { "type": "string", "maxLength": 1000 },
+        "rating": { "type": "number" },
+        "upvotes": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["itemId", "authorName", "content"]
+    },
+    "DownloadLog": {
+      "title": "DownloadLog",
+      "description": "Record of an asset download",
+      "type": "object",
+      "properties": {
+        "itemId": { "type": "string", "maxLength": 128 },
+        "itemTitle": { "type": "string", "maxLength": 100 },
+        "userUid": { "type": "string", "maxLength": 128 },
+        "downloadedAt": { "type": "string" },
+        "version": { "type": "string", "maxLength": 20 }
+      },
+      "required": ["itemId", "itemTitle", "downloadedAt"]
+    }
+  },
+  "firestore": {
+    "/items/{itemId}": {
+      "schema": "HubItem",
+      "description": "Collection of software, mods, plugins, apps and assets"
+    },
+    "/items/{itemId}/comments/{commentId}": {
+      "schema": "Comment",
+      "description": "Comments and reviews for a specific hub item"
+    },
+    "/downloads/{downloadId}": {
+      "schema": "DownloadLog",
+      "description": "Audit and history log of downloads"
+    }
+  }
+}

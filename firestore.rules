@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'ainagisakun@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Hub Items Collection
+    match /items/{itemId} {
+      allow read: if true;
+      allow create, delete: if true;
+      allow update: if true;
+
+      // Comments subcollection
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create, update, delete: if true;
+      }
+    }
+
+    // Download Logs
+    match /downloads/{downloadId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if true;
+    }
+
+    // Admin Users Collection
+    match /admins/{adminId} {
+      allow read, write: if true;
+    }
+  }
+}
+
