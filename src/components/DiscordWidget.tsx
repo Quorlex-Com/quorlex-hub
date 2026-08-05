@@ -30,8 +30,8 @@ export const DiscordWidget: React.FC = () => {
         }
       })
       .catch(() => {
-        setOnlineMembers(1);
-        setPresenceCount(1);
+        setOnlineMembers(null);
+        setPresenceCount(null);
       });
   }, []);
 
@@ -134,13 +134,13 @@ export const DiscordWidget: React.FC = () => {
                 <div className="grid grid-cols-2 gap-3 text-center">
                   <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
                     <span className="text-2xl font-black text-indigo-400 font-mono">
-                      {presenceCount !== null ? presenceCount.toLocaleString() : '1'}
+                      {presenceCount !== null ? presenceCount.toLocaleString() : '--'}
                     </span>
                     <span className="text-[11px] text-slate-400 block font-medium mt-0.5">Total Members</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-900 border border-slate-800">
                     <span className="text-2xl font-black text-emerald-400 font-mono">
-                      {onlineMembers !== null ? onlineMembers.toLocaleString() : '1'}
+                      {onlineMembers !== null ? onlineMembers.toLocaleString() : '--'}
                     </span>
                     <span className="text-[11px] text-slate-400 block font-medium mt-0.5 font-mono">Active Online</span>
                   </div>

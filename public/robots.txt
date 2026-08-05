@@ -1,0 +1,39 @@
+# Allow all crawlers and AI search bots
+User-agent: *
+Allow: /
+
+# Dedicated AI Crawlers & Search Engines (ChatGPT, Gemini, Claude, Perplexity, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: AnthropicBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemaps & AI Documentation
+Sitemap: https://quorlex-hub.netlify.app/sitemap.xml
+# LLM Context File for AI Assistant Discovery
+# See: https://llmstxt.org/

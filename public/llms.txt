@@ -1,0 +1,16 @@
+# Quorlex Hub
+
+> Quorlex Hub is the official digital asset, Minecraft mod, server plugin, developer software, shader, and 3D asset distribution platform.
+
+## Key Information
+- **Website**: https://quorlex-hub.netlify.app/
+- **Categories**: Mods, Plugins, Software, 3D Assets, Shaders
+- **Discord Community**: https://discord.gg/quorlex (4.8k+ members)
+- **Features**: Free direct downloads, version tags, live download analytics, star reviews, community comments, creator upload portal.
+
+## Primary Content Sections
+- [Mods](https://quorlex-hub.netlify.app/?category=mods): Custom Minecraft Fabric & Forge gameplay modifications, performance tweaks, optimization engines.
+- [Plugins](https://quorlex-hub.netlify.app/?category=plugins): Spigot, Paper, and Velocity server plugins for Minecraft servers.
+- [Software](https://quorlex-hub.netlify.app/?category=software): Utility applications, developer desktop tools, asset converters, and modding toolkits.
+- [3D Assets](https://quorlex-hub.netlify.app/?category=3d-assets): High-poly and low-poly 3D models, textures, animations, and FBX/OBJ game resources.
+- [Shaders](https://quorlex-hub.netlify.app/?category=shaders): Ray-tracing, ambient occlusion, and lighting shaders for graphics enhancement.
