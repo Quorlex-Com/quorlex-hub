@@ -39,16 +39,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         // Fallback
       }
     }
-    // Default Owner Admin session for easy access or user session
-    return {
-      uid: 'admin-owner-001',
-      name: 'Ainagi (Quorlex Owner)',
-      email: OWNER_EMAIL,
-      avatar: 'https://api.dicebear.com/7.x/bottts/svg?seed=QuorlexOwner',
-      role: 'admin',
-      discordConnected: true,
-      discordTag: 'QuorlexOwner#0001'
-    };
+    // Default to guest (logged out) for public visitors
+    return null;
   });
 
   const [notifications, setNotifications] = useState<AppNotification[]>(() => {
